@@ -1,3 +1,7 @@
+/* eslint-disable prettier/prettier */
+/* eslint-disable no-undef */
+/* eslint-disable prettier/prettier */
+/* eslint-disable no-unused-vars */
 import React, { useState } from "react";
 import {
   Container,
