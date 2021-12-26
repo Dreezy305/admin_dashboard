@@ -1,3 +1,8 @@
+/* eslint-disable prettier/prettier */
+/* eslint-disable no-undef */
+/* eslint-disable prettier/prettier */
+/* eslint-disable no-unused-vars */
+/* eslint-disable prettier/prettier */
 import React, { useState, useEffect } from "react";
 import { Navbar, Nav, Dropdown, Sidebar, Sidenav, Icon } from "rsuite";
 import { useCookies } from "react-cookie";
@@ -20,6 +25,7 @@ const iconStyles = {
 };
 
 const NavToggle = ({ expand, onChange }) => {
+  // console.log(onChange);
   return (
     <Navbar
       appearance="subtle"

@@ -1,3 +1,7 @@
+/* eslint-disable prettier/prettier */
+/* eslint-disable no-undef */
+/* eslint-disable prettier/prettier */
+/* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from "react";
 import { Container, Content, Input, Button, Table, Row, Col } from "rsuite";
 const { Column, HeaderCell, Cell } = Table;

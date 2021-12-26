@@ -1,3 +1,7 @@
+/* eslint-disable prettier/prettier */
+/* eslint-disable no-undef */
+/* eslint-disable prettier/prettier */
+/* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from "react";
 import { Container, Content, Panel, Row, Col, Tag } from "rsuite";
 import { useParams, useHistory } from "react-router-dom";

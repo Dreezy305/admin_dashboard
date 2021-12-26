@@ -1,9 +1,13 @@
+/* eslint-disable prettier/prettier */
+/* eslint-disable no-unused-vars */
+/* eslint-disable prettier/prettier */
 import React, { useEffect, useState } from "react";
 import { Dropdown, Icon, Header } from "rsuite";
 import { useCookies } from "react-cookie";
 import { useHistory } from "react-router-dom";
 
 export default function Heading({ page }) {
+  console.log(page);
   const [user, setUser] = useState("");
   const [cookie, setCookie, removeCookie] = useCookies(["a_auth"]);
   const router = useHistory();

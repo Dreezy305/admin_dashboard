@@ -1,3 +1,8 @@
+/* eslint-disable prettier/prettier */
+/* eslint-disable eqeqeq */
+/* eslint-disable no-control-regex */
+/* eslint-disable prettier/prettier */
+/* eslint-disable no-undef */
 "use strict";
 const crypto = require("crypto");
 const moment = require("moment");
