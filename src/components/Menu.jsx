@@ -11,7 +11,7 @@ const headerStyles = {
   padding: 18,
   fontSize: 16,
   height: 56,
-  background: "#b90106",
+  background: "#228B22",
   color: " #fff",
   whiteSpace: "nowrap",
   overflow: "hidden",
@@ -78,14 +78,14 @@ export default function Menu({ activeKeys, active }) {
       >
         Tickets
       </Nav.Item>
-      <Nav.Item
+      {/* <Nav.Item
         eventKey="4"
         href="/payouts"
         icon={<Icon icon="credit-card" />}
         active={active === "4" ? active : false}
       >
         Payouts
-      </Nav.Item>
+      </Nav.Item> */}
       <Nav.Item
         eventKey="5"
         href="/players"
@@ -182,14 +182,14 @@ export default function Menu({ activeKeys, active }) {
       >
         Transactions
       </Nav.Item>
-      <Nav.Item
+      {/* <Nav.Item
         eventKey="4"
         href="/payouts"
         icon={<Icon icon="credit-card" />}
         active={active === "4" ? active : false}
       >
         Payouts
-      </Nav.Item>
+      </Nav.Item> */}
       <Nav.Item
         eventKey="5"
         href="/players"
@@ -235,14 +235,14 @@ export default function Menu({ activeKeys, active }) {
       >
         Transactions
       </Nav.Item>
-      <Nav.Item
+      {/* <Nav.Item
         eventKey="4"
         href="/payouts"
         icon={<Icon icon="credit-card" />}
         active={active === "4" ? active : false}
       >
         Payouts
-      </Nav.Item>
+      </Nav.Item> */}
       <Nav.Item
         eventKey="5"
         href="/players"
