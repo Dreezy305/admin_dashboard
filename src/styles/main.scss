@@ -1,0 +1,142 @@
+body {
+  background-color: #f9f9f9;
+
+  .heading {
+    background-color: #fff;
+    padding: 10px;
+
+    .menu {
+      float: right;
+    }
+  }
+
+  .search {
+    float: right;
+    input {
+      width: 350px;
+    }
+  }
+
+  .table {
+    width: 100%;
+    margin-top: 30px;
+  }
+
+  .upload-btn-wrapper {
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+  }
+
+  .btn {
+    border: 2px solid gray;
+    color: gray;
+    background-color: white;
+    padding: 8px 20px;
+    border-radius: 8px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .upload-btn-wrapper input[type="file"] {
+    font-size: 100px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    opacity: 0;
+  }
+
+  .games {
+    font-size: 11px;
+    margin-top: 15px;
+
+    &.large {
+      font-size: 16px;
+      line-height: 30px;
+    }
+
+    .game {
+      margin-bottom: 10px;
+      border-bottom: 1px solid #ccc;
+
+      .odd {
+        float: right;
+
+        .remove {
+          margin-left: 2px;
+          background-color: #ccc;
+          padding-left: 4px;
+          padding-right: 4px;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+
+  .ticket-heading {
+    margin-bottom: 30px;
+    max-width: 500px;
+    padding: 10px;
+
+    .rs-row {
+      border: 1px solid #ccc;
+    }
+  }
+
+  .ticket-table {
+    width: 100%;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+
+    tr {
+      border-bottom: 1px solid #ccc;
+      td,
+      th {
+        font-size: 13px;
+        text-align: left;
+        padding: 10px;
+      }
+      th {
+        background-color: #b90106;
+        color: #fff;
+      }
+    }
+  }
+
+  .container {
+    width: 1200px;
+    margin: 0 auto;
+    margin-top: 50px;
+    padding: 10px;
+
+    .inner {
+      width: 700px;
+
+      .form {
+        padding: 10px;
+      }
+    }
+  }
+
+  .login-page {
+    width: 900px;
+    margin: 0 auto;
+    margin-top: 150px;
+  }
+
+  .counter {
+    text-align: center;
+    padding: 20px;
+    margin-bottom: 30px;
+    background-color: #fff;
+  }
+
+  @media (max-width: 768px) {
+    .container {
+      width: 100%;
+      .inner {
+        width: 100%;
+      }
+    }
+  }
+}

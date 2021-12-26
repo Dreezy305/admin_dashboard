@@ -1,0 +1,49 @@
+{
+  "name": "betpay-admin",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "scripts": {
+    "clean": "rm -rf dist",
+    "dev": "yarn clean && parcel src/index.html --no-cache -p 2323",
+    "build": "parcel build src/index.html",
+    "start": "yarn build && pm2 start client.js --name 'betpay-admin' ",
+    "production": "yarn build && pm2 reload client.js -n 'betpay-admin' --update-env"
+  },
+  "dependencies": {
+    "apexcharts": "^3.27.3",
+    "cors": "^2.8.5",
+    "dompurify": "^2.3.2",
+    "express": "^4.17.1",
+    "fibers": ">= 3.1.0",
+    "helmet": "^4.6.0",
+    "mobx": "^6.3.5",
+    "mobx-react-lite": "^3.2.1",
+    "moment": "^2.29.1",
+    "next": "^11.1.2",
+    "node-sass": "^4.0.0 || ^5.0.0",
+    "react": "^17.0.2",
+    "react-apexcharts": "^1.3.9",
+    "react-cookie": "^4.1.1",
+    "react-dom": "^17.0.2",
+    "react-router-dom": "^5.2.0",
+    "rsuite": "^4.10.3",
+    "suneditor": "^2.41.3",
+    "suneditor-react": "^3.3.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.15.0",
+    "@babel/preset-env": "^7.15.0",
+    "@babel/preset-react": "^7.14.5",
+    "eslint": "^7.32.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-prettier": "^3.4.0",
+    "eslint-plugin-react": "^7.24.0",
+    "parcel-bundler": "^1.12.5",
+    "prettier": "^2.3.2",
+    "sass": "^1.3.0"
+  }
+}
