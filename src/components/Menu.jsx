@@ -25,7 +25,6 @@ const iconStyles = {
 };
 
 const NavToggle = ({ expand, onChange }) => {
-  // console.log(onChange);
   return (
     <Navbar
       appearance="subtle"
