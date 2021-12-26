@@ -1,4 +1,4 @@
-# Betpay admin
+# Lottery admin
 
 Install it and run:
 
