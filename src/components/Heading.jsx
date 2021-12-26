@@ -7,7 +7,6 @@ import { useCookies } from "react-cookie";
 import { useHistory } from "react-router-dom";
 
 export default function Heading({ page }) {
-  console.log(page);
   const [user, setUser] = useState("");
   const [cookie, setCookie, removeCookie] = useCookies(["a_auth"]);
   const router = useHistory();
