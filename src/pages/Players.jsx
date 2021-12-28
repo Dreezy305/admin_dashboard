@@ -226,7 +226,7 @@ export default function Players() {
         <Container>
           <Heading page="Players" player="Howard Stern" />
           <Content className="container">
-            <Nav
+            {/* <Nav
               activeKey={tab}
               onSelect={setTab}
               style={{ marginBottom: 20 }}
@@ -235,7 +235,7 @@ export default function Players() {
               <Nav.Item eventKey="table">Table</Nav.Item>
               <Nav.Item eventKey="graph">Graph</Nav.Item>
               <Nav.Item eventKey="export">Export Data</Nav.Item>
-            </Nav>
+            </Nav> */}
             <div style={{ display: tab === "export" ? "block" : "none" }}>
               <Row>
                 <Col sm={24} lg={8}>
@@ -329,6 +329,8 @@ export default function Players() {
                   <HeaderCell>No</HeaderCell>
                   <Cell>
                     {(rowData, key) => {
+                      console.log(rowData);
+
                       return <span>{key + 1}</span>;
                     }}
                   </Cell>
@@ -345,16 +347,16 @@ export default function Players() {
                     }}
                   </Cell>
                 </Column>
-                <Column width={150} fixed>
-                  <HeaderCell>Phone</HeaderCell>
-                  <Cell dataKey="phone" />
-                </Column>
                 <Column width={200} fixed>
                   <HeaderCell>Email</HeaderCell>
                   <Cell dataKey="email" />
                 </Column>
+                <Column width={150} fixed>
+                  <HeaderCell>Phone</HeaderCell>
+                  <Cell dataKey="phone" />
+                </Column>
 
-                <Column width={100} fixed>
+                {/* <Column width={100} fixed>
                   <HeaderCell>Balance</HeaderCell>
                   <Cell>
                     {(rowData) => {
@@ -372,11 +374,11 @@ export default function Players() {
                       );
                     }}
                   </Cell>
-                </Column>
-                <Column width={100} fixed>
+                </Column> */}
+                {/* <Column width={100} fixed>
                   <HeaderCell>Role</HeaderCell>
                   <Cell dataKey="role" />
-                </Column>
+                </Column> */}
                 <Column width={100} fixed>
                   <HeaderCell>Status</HeaderCell>
                   <Cell>
@@ -403,22 +405,33 @@ export default function Players() {
                     }}
                   </Cell>
                 </Column>
-                <Column width={80}>
+                <Column width={130} fixed="right">
                   <HeaderCell>Action</HeaderCell>
                   <Cell>
                     {(rowData) => {
                       return (
-                        <span>
-                          <Button
-                            size="xs"
-                            appearance="ghost"
-                            onClick={() => router.push(`/player/${rowData.id}`)}
-                          >
-                            {" "}
-                            View{" "}
-                          </Button>{" "}
-                          &nbsp;
-                        </span>
+                        <>
+                          <span>
+                            <Button size="xs" appearance="ghost">
+                              {" "}
+                              Edit
+                            </Button>{" "}
+                            &nbsp;
+                          </span>
+                          <span>
+                            <Button
+                              size="xs"
+                              appearance="ghost"
+                              onClick={() =>
+                                router.push(`/player/${rowData.id}`)
+                              }
+                            >
+                              {" "}
+                              View
+                            </Button>{" "}
+                            &nbsp;
+                          </span>
+                        </>
                       );
                     }}
                   </Cell>
