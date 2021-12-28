@@ -46,6 +46,7 @@ export default function Players() {
 
   useEffect(() => {
     let user = cookie && cookie.a_auth ? cookie.a_auth : null;
+    console.log(user);
     setRole(user.role);
     user.role === "media-marketing" ? router.push("/no-access") : null;
   }, []);
@@ -66,6 +67,7 @@ export default function Players() {
     })
       .then((res) => res.json())
       .then((res) => {
+        // console.log(res);
         if (res.success) {
           setPlayers(res.data);
           setLoading(false);
@@ -86,6 +88,7 @@ export default function Players() {
     })
       .then((res) => res.json())
       .then((res) => {
+        console.log(res);
         if (res.success) {
           setPlayers(res.data);
           setLoading(false);
