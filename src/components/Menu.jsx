@@ -202,7 +202,7 @@ export default function Menu({ activeKeys, active }) {
 
   const admin = () => (
     <>
-      <Nav.Item
+      {/* <Nav.Item
         eventKey="1"
         href="/site-analytics"
         icon={<Icon icon="globe" />}
@@ -233,7 +233,7 @@ export default function Menu({ activeKeys, active }) {
         active={active === "3" ? active : false}
       >
         Transactions
-      </Nav.Item>
+      </Nav.Item> */}
       {/* <Nav.Item
         eventKey="4"
         href="/payouts"
@@ -258,7 +258,7 @@ export default function Menu({ activeKeys, active }) {
       >
         Banners
       </Nav.Item>
-      <Nav.Item
+      {/* <Nav.Item
         eventKey="7"
         href="/notifications"
         icon={<Icon icon="bell" />}
@@ -327,7 +327,7 @@ export default function Menu({ activeKeys, active }) {
         >
           Payment management
         </Dropdown.Item>
-      </Dropdown>
+      </Dropdown> */}
     </>
   );
 

@@ -405,7 +405,7 @@ export default function Players() {
                     }}
                   </Cell>
                 </Column>
-                <Column width={130} fixed="right">
+                <Column width={150} fixed="right">
                   <HeaderCell>Action</HeaderCell>
                   <Cell>
                     {(rowData) => {
@@ -422,9 +422,9 @@ export default function Players() {
                             <Button
                               size="xs"
                               appearance="ghost"
-                              onClick={() =>
-                                router.push(`/player/${rowData.id}`)
-                              }
+                              // onClick={() =>
+                              //   router.push(`/player/${rowData.id}`)
+                              // }
                             >
                               {" "}
                               View
