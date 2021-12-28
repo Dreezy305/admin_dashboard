@@ -226,16 +226,16 @@ export default function Players() {
         <Container>
           <Heading page="Players" player="Howard Stern" />
           <Content className="container">
-            {/* <Nav
+            <Nav
               activeKey={tab}
               onSelect={setTab}
               style={{ marginBottom: 20 }}
               appearance="subtle"
             >
               <Nav.Item eventKey="table">Table</Nav.Item>
-              <Nav.Item eventKey="graph">Graph</Nav.Item>
+              {/* <Nav.Item eventKey="graph">Graph</Nav.Item> */}
               <Nav.Item eventKey="export">Export Data</Nav.Item>
-            </Nav> */}
+            </Nav>
             <div style={{ display: tab === "export" ? "block" : "none" }}>
               <Row>
                 <Col sm={24} lg={8}>
@@ -254,9 +254,9 @@ export default function Players() {
                       { label: "Last name", value: "lastName" },
                       { label: "Email", value: "email" },
                       { label: "Phone", value: "phone" },
-                      { label: "Birth date", value: "dob" },
-                      { label: "Role", value: "role" },
-                      { label: "Wallet balance", value: "walletBalance" },
+                      // { label: "Birth date", value: "dob" },
+                      // { label: "Role", value: "role" },
+                      // { label: "Wallet balance", value: "walletBalance" },
                       { label: "Status", value: "banned" },
                     ]}
                     multi
@@ -441,17 +441,17 @@ export default function Players() {
               <div style={{ textAlign: "center", marginTop: 20 }}>
                 <Button
                   appearance="default"
-                  onClick={prev}
-                  disabled={players.length < 50 ? true : false}
+                  // onClick={prev}
+                  // disabled={players.length < 50 ? true : false}
                 >
                   &larr; Prev
                 </Button>
                 <Button
                   appearance="default"
-                  onClick={next}
-                  disabled={players.length < 50 ? true : false}
+                  // onClick={next}
+                  // disabled={players.length < 50 ? true : false}
                 >
-                  Next&rarr;
+                  Next &rarr;
                 </Button>
               </div>
             </div>
