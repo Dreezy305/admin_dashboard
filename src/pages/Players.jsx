@@ -46,7 +46,7 @@ export default function Players() {
 
   useEffect(() => {
     let user = cookie && cookie.a_auth ? cookie.a_auth : null;
-    console.log(user);
+
     setRole(user.role);
     user.role === "media-marketing" ? router.push("/no-access") : null;
   }, []);
@@ -236,6 +236,8 @@ export default function Players() {
               {/* <Nav.Item eventKey="graph">Graph</Nav.Item> */}
               <Nav.Item eventKey="export">Export Data</Nav.Item>
             </Nav>
+
+            {/* EXPORT DATA */}
             <div style={{ display: tab === "export" ? "block" : "none" }}>
               <Row>
                 <Col sm={24} lg={8}>
@@ -295,6 +297,7 @@ export default function Players() {
               </div>
             </div>
 
+            {/* SEARCH PLAYERS */}
             <div style={{ display: tab === "table" ? "block" : "none" }}>
               <div className="search">
                 <Row>
@@ -329,7 +332,9 @@ export default function Players() {
                   <HeaderCell>No</HeaderCell>
                   <Cell>
                     {(rowData, key) => {
-                      console.log(rowData);
+                      {
+                        /* console.log(rowData); */
+                      }
 
                       return <span>{key + 1}</span>;
                     }}
@@ -412,22 +417,22 @@ export default function Players() {
                       return (
                         <>
                           <span>
-                            <Button size="xs" appearance="ghost">
+                            <Button
+                              size="xs"
+                              appearance="ghost"
+                              onClick={() =>
+                                router.push(`/player/${rowData.id}`)
+                              }
+                            >
                               {" "}
-                              Edit
+                              View
                             </Button>{" "}
                             &nbsp;
                           </span>
                           <span>
-                            <Button
-                              size="xs"
-                              appearance="ghost"
-                              // onClick={() =>
-                              //   router.push(`/player/${rowData.id}`)
-                              // }
-                            >
+                            <Button size="xs" appearance="ghost">
                               {" "}
-                              View
+                              Edit
                             </Button>{" "}
                             &nbsp;
                           </span>
@@ -456,6 +461,7 @@ export default function Players() {
               </div>
             </div>
 
+            {/* CHART/GRAPH */}
             <div style={{ display: tab === "graph" ? "block" : "none" }}>
               <Row>
                 <Col sm={24} lg={8}>
