@@ -428,9 +428,9 @@ export default function Players() {
                               size="xs"
                               appearance="ghost"
                               onClick={() => {
-                                // router.push(`/player/${rowData.id}`)
-                                handleOpen();
-                                setIsModal(true);
+                                router.push(`/player/${rowData.id}`);
+                                // handleOpen();
+                                // setIsModal(true);
                               }}
                             >
                               {" "}
