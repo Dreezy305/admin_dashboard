@@ -15,6 +15,7 @@ import {
   DateRangePicker,
   TagPicker,
   Alert,
+  Modal,
 } from "rsuite";
 
 const { Column, HeaderCell, Cell } = Table;
@@ -24,6 +25,7 @@ import ReactApexChart from "react-apexcharts";
 import moment from "moment";
 import Heading from "../components/Heading";
 import Menu from "../components/Menu";
+import Playermodal from "../components/playermodal";
 
 export default function Players() {
   const [loading, setLoading] = useState(false);
@@ -43,6 +45,11 @@ export default function Players() {
   ]);
   const [graph, setGraph] = useState([0, 0]);
   const [cookie, setCookie, removeCookie] = useCookies(["a_auth"]);
+
+  const [open, setOpen] = useState(false);
+  const [isModal, setIsModal] = useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
 
   useEffect(() => {
     let user = cookie && cookie.a_auth ? cookie.a_auth : null;
@@ -420,9 +427,11 @@ export default function Players() {
                             <Button
                               size="xs"
                               appearance="ghost"
-                              onClick={() =>
-                                router.push(`/player/${rowData.id}`)
-                              }
+                              onClick={() => {
+                                // router.push(`/player/${rowData.id}`)
+                                handleOpen();
+                                setIsModal(true);
+                              }}
                             >
                               {" "}
                               View
@@ -489,6 +498,7 @@ export default function Players() {
             </div>
           </Content>
         </Container>
+        {/* {open && <Playermodal open={open} handleClose={handleClose} />} */}
       </Container>
     </div>
   );
