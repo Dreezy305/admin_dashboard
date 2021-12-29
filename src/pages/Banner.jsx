@@ -19,6 +19,10 @@ import { useCookies } from "react-cookie";
 import Heading from "../components/Heading";
 import Menu from "../components/Menu";
 
+/* eslint-disable prettier/prettier */
+/* eslint-disable no-undef */
+/* eslint-disable prettier/prettier */
+/* eslint-disable no-unused-vars */
 export default function AddBanner() {
   const [loading, setLoading] = useState(false);
   const [banner, setBanner] = useState({});

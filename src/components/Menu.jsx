@@ -11,7 +11,7 @@ const headerStyles = {
   padding: 18,
   fontSize: 16,
   height: 56,
-  background: "#b90106",
+  background: "#228B22",
   color: " #fff",
   whiteSpace: "nowrap",
   overflow: "hidden",
@@ -25,7 +25,6 @@ const iconStyles = {
 };
 
 const NavToggle = ({ expand, onChange }) => {
-  // console.log(onChange);
   return (
     <Navbar
       appearance="subtle"
@@ -78,14 +77,14 @@ export default function Menu({ activeKeys, active }) {
       >
         Tickets
       </Nav.Item>
-      <Nav.Item
+      {/* <Nav.Item
         eventKey="4"
         href="/payouts"
         icon={<Icon icon="credit-card" />}
         active={active === "4" ? active : false}
       >
         Payouts
-      </Nav.Item>
+      </Nav.Item> */}
       <Nav.Item
         eventKey="5"
         href="/players"
@@ -182,14 +181,14 @@ export default function Menu({ activeKeys, active }) {
       >
         Transactions
       </Nav.Item>
-      <Nav.Item
+      {/* <Nav.Item
         eventKey="4"
         href="/payouts"
         icon={<Icon icon="credit-card" />}
         active={active === "4" ? active : false}
       >
         Payouts
-      </Nav.Item>
+      </Nav.Item> */}
       <Nav.Item
         eventKey="5"
         href="/players"
@@ -203,7 +202,7 @@ export default function Menu({ activeKeys, active }) {
 
   const admin = () => (
     <>
-      <Nav.Item
+      {/* <Nav.Item
         eventKey="1"
         href="/site-analytics"
         icon={<Icon icon="globe" />}
@@ -234,15 +233,15 @@ export default function Menu({ activeKeys, active }) {
         active={active === "3" ? active : false}
       >
         Transactions
-      </Nav.Item>
-      <Nav.Item
+      </Nav.Item> */}
+      {/* <Nav.Item
         eventKey="4"
         href="/payouts"
         icon={<Icon icon="credit-card" />}
         active={active === "4" ? active : false}
       >
         Payouts
-      </Nav.Item>
+      </Nav.Item> */}
       <Nav.Item
         eventKey="5"
         href="/players"
@@ -259,7 +258,7 @@ export default function Menu({ activeKeys, active }) {
       >
         Banners
       </Nav.Item>
-      <Nav.Item
+      {/* <Nav.Item
         eventKey="7"
         href="/notifications"
         icon={<Icon icon="bell" />}
@@ -328,7 +327,7 @@ export default function Menu({ activeKeys, active }) {
         >
           Payment management
         </Dropdown.Item>
-      </Dropdown>
+      </Dropdown> */}
     </>
   );
 

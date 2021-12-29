@@ -1,3 +1,7 @@
+/* eslint-disable prettier/prettier */
+/* eslint-disable no-undef */
+/* eslint-disable prettier/prettier */
+/* eslint-disable no-unused-vars */
 import React, { useState } from "react";
 import {
   Button,
@@ -19,9 +23,11 @@ export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [cookie, setCookie] = useCookies(["a_auth"]);
+  const [loading, setLoading] = useState(false);
   const router = useHistory();
 
   const authenticate = () => {
+    setLoading(true);
     if (!email) {
       Alert.error("Invalid email address!");
     } else if (password.length < 6) {
@@ -47,17 +53,18 @@ export default function Login() {
               id: data.data.id,
               role: data.data.role,
             });
+
             setCookie("a_auth", user, {
               path: "/",
               sameSite: true,
               // expires: 60 * 120,
             });
-            Alert.success(
-              "Signed in successfully. Redirecting to dashboard...."
-            );
+            Alert.success("Signed in successfully.");
+            setLoading(false);
             router.push("/");
           } else {
             Alert.error("Invalid email or password!");
+            setLoading(false);
           }
         });
     }
@@ -89,8 +96,8 @@ export default function Login() {
                     />
                   </FormGroup>
                   <FormGroup>
-                    <Button color="red" block onClick={() => authenticate()}>
-                      Sign in
+                    <Button color="green" block onClick={() => authenticate()}>
+                      {loading ? "Logging in..." : "Sign in"}
                     </Button>
                   </FormGroup>
                 </Form>

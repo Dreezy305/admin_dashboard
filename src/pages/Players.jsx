@@ -46,6 +46,7 @@ export default function Players() {
 
   useEffect(() => {
     let user = cookie && cookie.a_auth ? cookie.a_auth : null;
+    console.log(user);
     setRole(user.role);
     user.role === "media-marketing" ? router.push("/no-access") : null;
   }, []);
@@ -66,6 +67,7 @@ export default function Players() {
     })
       .then((res) => res.json())
       .then((res) => {
+        // console.log(res);
         if (res.success) {
           setPlayers(res.data);
           setLoading(false);
@@ -86,6 +88,7 @@ export default function Players() {
     })
       .then((res) => res.json())
       .then((res) => {
+        console.log(res);
         if (res.success) {
           setPlayers(res.data);
           setLoading(false);
@@ -230,7 +233,7 @@ export default function Players() {
               appearance="subtle"
             >
               <Nav.Item eventKey="table">Table</Nav.Item>
-              <Nav.Item eventKey="graph">Graph</Nav.Item>
+              {/* <Nav.Item eventKey="graph">Graph</Nav.Item> */}
               <Nav.Item eventKey="export">Export Data</Nav.Item>
             </Nav>
             <div style={{ display: tab === "export" ? "block" : "none" }}>
@@ -251,9 +254,9 @@ export default function Players() {
                       { label: "Last name", value: "lastName" },
                       { label: "Email", value: "email" },
                       { label: "Phone", value: "phone" },
-                      { label: "Birth date", value: "dob" },
-                      { label: "Role", value: "role" },
-                      { label: "Wallet balance", value: "walletBalance" },
+                      // { label: "Birth date", value: "dob" },
+                      // { label: "Role", value: "role" },
+                      // { label: "Wallet balance", value: "walletBalance" },
                       { label: "Status", value: "banned" },
                     ]}
                     multi
@@ -326,6 +329,8 @@ export default function Players() {
                   <HeaderCell>No</HeaderCell>
                   <Cell>
                     {(rowData, key) => {
+                      console.log(rowData);
+
                       return <span>{key + 1}</span>;
                     }}
                   </Cell>
@@ -342,16 +347,16 @@ export default function Players() {
                     }}
                   </Cell>
                 </Column>
-                <Column width={150} fixed>
-                  <HeaderCell>Phone</HeaderCell>
-                  <Cell dataKey="phone" />
-                </Column>
                 <Column width={200} fixed>
                   <HeaderCell>Email</HeaderCell>
                   <Cell dataKey="email" />
                 </Column>
+                <Column width={150} fixed>
+                  <HeaderCell>Phone</HeaderCell>
+                  <Cell dataKey="phone" />
+                </Column>
 
-                <Column width={100} fixed>
+                {/* <Column width={100} fixed>
                   <HeaderCell>Balance</HeaderCell>
                   <Cell>
                     {(rowData) => {
@@ -369,11 +374,11 @@ export default function Players() {
                       );
                     }}
                   </Cell>
-                </Column>
-                <Column width={100} fixed>
+                </Column> */}
+                {/* <Column width={100} fixed>
                   <HeaderCell>Role</HeaderCell>
                   <Cell dataKey="role" />
-                </Column>
+                </Column> */}
                 <Column width={100} fixed>
                   <HeaderCell>Status</HeaderCell>
                   <Cell>
@@ -400,22 +405,33 @@ export default function Players() {
                     }}
                   </Cell>
                 </Column>
-                <Column width={80}>
+                <Column width={150} fixed="right">
                   <HeaderCell>Action</HeaderCell>
                   <Cell>
                     {(rowData) => {
                       return (
-                        <span>
-                          <Button
-                            size="xs"
-                            appearance="ghost"
-                            onClick={() => router.push(`/player/${rowData.id}`)}
-                          >
-                            {" "}
-                            View{" "}
-                          </Button>{" "}
-                          &nbsp;
-                        </span>
+                        <>
+                          <span>
+                            <Button size="xs" appearance="ghost">
+                              {" "}
+                              Edit
+                            </Button>{" "}
+                            &nbsp;
+                          </span>
+                          <span>
+                            <Button
+                              size="xs"
+                              appearance="ghost"
+                              // onClick={() =>
+                              //   router.push(`/player/${rowData.id}`)
+                              // }
+                            >
+                              {" "}
+                              View
+                            </Button>{" "}
+                            &nbsp;
+                          </span>
+                        </>
                       );
                     }}
                   </Cell>
@@ -425,17 +441,17 @@ export default function Players() {
               <div style={{ textAlign: "center", marginTop: 20 }}>
                 <Button
                   appearance="default"
-                  onClick={prev}
-                  disabled={players.length < 50 ? true : false}
+                  // onClick={prev}
+                  // disabled={players.length < 50 ? true : false}
                 >
                   &larr; Prev
                 </Button>
                 <Button
                   appearance="default"
-                  onClick={next}
-                  disabled={players.length < 50 ? true : false}
+                  // onClick={next}
+                  // disabled={players.length < 50 ? true : false}
                 >
-                  Next&rarr;
+                  Next &rarr;
                 </Button>
               </div>
             </div>
