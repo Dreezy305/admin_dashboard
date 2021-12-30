@@ -48,8 +48,6 @@ export default function Players() {
 
   const [open, setOpen] = useState(false);
   const [isModal, setIsModal] = useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
 
   useEffect(() => {
     let user = cookie && cookie.a_auth ? cookie.a_auth : null;
@@ -225,6 +223,9 @@ export default function Players() {
       ],
     },
   };
+
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
 
   return (
     <div className="show-fake-browser sidebar-page">
@@ -498,7 +499,6 @@ export default function Players() {
             </div>
           </Content>
         </Container>
-        {/* {open && <Playermodal open={open} handleClose={handleClose} />} */}
       </Container>
     </div>
   );

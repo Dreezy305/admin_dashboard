@@ -264,9 +264,9 @@ export default function Player() {
         onSelect={onSelect}
         style={{ marginBottom: 30 }}
       >
-        <Nav.Item eventKey="overview">Overview</Nav.Item>
-        <Nav.Item eventKey="wallet">Wallet History</Nav.Item>
-        <Nav.Item eventKey="ticket">Ticket history</Nav.Item>
+        {/* <Nav.Item eventKey="overview">Overview</Nav.Item> */}
+        {/* <Nav.Item eventKey="wallet">Wallet History</Nav.Item> */}
+        {/* <Nav.Item eventKey="ticket">Ticket history</Nav.Item> */}
       </Nav>
     );
   };
@@ -432,7 +432,7 @@ export default function Player() {
                       }).format(player.bonusBalance ? player.bonusBalance : 0)}
                     </span>
                   </h4>
-                  <div style={{ marginTop: 30 }}>
+                  {/* <div style={{ marginTop: 30 }}>
                     <Button appearance="ghost" onClick={toggleModal}>
                       Edit
                     </Button>{" "}
@@ -444,7 +444,7 @@ export default function Player() {
                     <Button appearance="ghost" onClick={toggleModal2}>
                       Manual Withdrawal
                     </Button>
-                  </div>
+                  </div> */}
 
                   <br />
                   <CustomNav
