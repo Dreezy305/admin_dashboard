@@ -506,7 +506,7 @@ export default function Player() {
                       <Col sm={24} lg={12}>
                         <h6>
                           {" "}
-                          {player.role === "standard"
+                          {player[param.id].role === "standard"
                             ? "Standard"
                             : "Super player"}
                         </h6>
