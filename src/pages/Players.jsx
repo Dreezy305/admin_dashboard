@@ -17,6 +17,7 @@ import {
   Alert,
   Modal,
 } from "rsuite";
+import { PlayerData } from "../dummyData/player";
 
 const { Column, HeaderCell, Cell } = Table;
 import { useHistory } from "react-router-dom";
@@ -29,7 +30,7 @@ import Playermodal from "../components/playermodal";
 
 export default function Players() {
   const [loading, setLoading] = useState(false);
-  const [players, setPlayers] = useState([]);
+  const [players, setPlayers] = useState(PlayerData);
   const [search, setSearch] = useState("");
   const [page, setPage] = useState(1);
   const [notify, setNotify] = useState();
@@ -57,13 +58,13 @@ export default function Players() {
   }, []);
 
   useEffect(() => {
-    getPlayers();
+    // getPlayers();
     graphPlayer();
   }, []);
 
   const getPlayers = async () => {
     setLoading(true);
-    const url = `${process.env.API_URL}players?page=${page}&limit=50`;
+    // const url = `${process.env.API_URL}players?page=${page}&limit=50`;
     await fetch(url, {
       headers: {
         "content-type": "application/json",
@@ -314,7 +315,7 @@ export default function Players() {
                       size="lg"
                       type="search"
                       placeholder="Search using name, email...."
-                      onChange={handleSearch}
+                      // onChange={handleSearch}
                     />
                   </Col>
                 </Row>
@@ -352,6 +353,7 @@ export default function Players() {
                   <HeaderCell>Name</HeaderCell>
                   <Cell>
                     {(rowData) => {
+                      console.log(rowData);
                       return (
                         <span>
                           {rowData.firstName} {rowData.lastName}
@@ -421,7 +423,8 @@ export default function Players() {
                 <Column width={150} fixed="right">
                   <HeaderCell>Action</HeaderCell>
                   <Cell>
-                    {(rowData) => {
+                    {(rowData, key) => {
+                      console.log(key);
                       return (
                         <>
                           <span>
@@ -429,7 +432,10 @@ export default function Players() {
                               size="xs"
                               appearance="ghost"
                               onClick={() => {
-                                router.push(`/player/${rowData.id}`);
+                                router.push({
+                                  pathname: `/player/${key}`,
+                                  state: key,
+                                });
                                 // handleOpen();
                                 // setIsModal(true);
                               }}

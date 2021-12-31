@@ -25,12 +25,13 @@ const { Column, HeaderCell, Cell } = Table;
 import Heading from "../components/Heading";
 import Menu from "../components/Menu";
 import { parseCurrency } from "../components/Utils";
+import { PlayerData } from "../dummyData/player";
 
 export default function Player() {
   const [loading, setLoading] = React.useState(false);
   const [depositLoading, setDepositLoading] = React.useState(false);
   const [withdrawLoading, setWithdrawLoading] = React.useState(false);
-  const [player, setPlayer] = useState({});
+  const [player, setPlayer] = useState(PlayerData);
   const [notify, setNotify] = React.useState();
   const [tab, setTab] = React.useState("overview");
   const [modal, setModal] = React.useState(false);
@@ -51,7 +52,7 @@ export default function Player() {
   }, []);
 
   useEffect(() => {
-    getPlayer();
+    // getPlayer();
   }, []);
 
   const handleTab = (val) => {
@@ -60,7 +61,7 @@ export default function Player() {
 
   const getPlayer = async () => {
     setLoading(true);
-    const url = `${process.env.API_URL}player/${param.id}`;
+    // const url = `${process.env.API_URL}player/${param.id}`;
     await fetch(url, {
       headers: {
         "content-type": "application/json",
@@ -271,6 +272,8 @@ export default function Player() {
     );
   };
 
+  // console.log();
+
   return (
     <div className="show-fake-browser sidebar-page">
       <Modal size={"xs"} show={modal1} onHide={toggleModal1} backdrop="static">
@@ -410,7 +413,7 @@ export default function Player() {
               >
                 <div className="form">
                   <h3>
-                    {player.firstName} {player.lastName}
+                    {player[param.id].firstName} {player[param.id].lastName}
                   </h3>
                   <h4>
                     <span>
@@ -420,7 +423,9 @@ export default function Player() {
                         style: "currency",
                         currency: "NGN",
                       }).format(
-                        player.walletBalance ? player.walletBalance : 0
+                        player[param.id].walletBalance
+                          ? player[param.id].walletBalance
+                          : 0
                       )}
                     </span>
                     &nbsp;&nbsp;&nbsp;
@@ -429,7 +434,11 @@ export default function Player() {
                       {new Intl.NumberFormat("en-NG", {
                         style: "currency",
                         currency: "NGN",
-                      }).format(player.bonusBalance ? player.bonusBalance : 0)}
+                      }).format(
+                        player[param.id].bonusBalance
+                          ? player[param.id].bonusBalance
+                          : 0
+                      )}
                     </span>
                   </h4>
                   {/* <div style={{ marginTop: 30 }}>
@@ -462,7 +471,10 @@ export default function Player() {
                         <h6> Date of birth: </h6>
                       </Col>
                       <Col sm={24} lg={12}>
-                        <h6> {moment(player.dob).format("MMM D, YYYY")}</h6>
+                        <h6>
+                          {" "}
+                          {moment(player[param.id].dob).format("MMM D, YYYY")}
+                        </h6>
                       </Col>
                     </Row>
                     <Row>
@@ -472,7 +484,7 @@ export default function Player() {
                         <h6> Email: </h6>
                       </Col>
                       <Col sm={24} lg={12}>
-                        <h6> {player.email}</h6>
+                        <h6> {player[param.id].email}</h6>
                       </Col>
                     </Row>
                     <Row>
@@ -482,7 +494,7 @@ export default function Player() {
                         <h6> Phone: </h6>
                       </Col>
                       <Col sm={24} lg={12}>
-                        <h6> {player.phone}</h6>
+                        <h6> {player[param.id].phone}</h6>
                       </Col>
                     </Row>
                     <Row>
@@ -507,7 +519,10 @@ export default function Player() {
                         <h6> Status: </h6>
                       </Col>
                       <Col sm={24} lg={12}>
-                        <h6> {player.banned ? "banned" : "active"}</h6>
+                        <h6>
+                          {" "}
+                          {player[param.id].banned ? "banned" : "active"}
+                        </h6>
                       </Col>
                     </Row>
                     <Row>
@@ -519,7 +534,7 @@ export default function Player() {
                       <Col sm={24} lg={12}>
                         <h6>
                           {" "}
-                          {moment(player.createdAt).format(
+                          {moment(player[param.id].createdAt).format(
                             "MMM D, YYYY @ h:mm A"
                           )}
                         </h6>
@@ -534,7 +549,7 @@ export default function Player() {
                       <Col sm={24} lg={12}>
                         <h6>
                           {" "}
-                          {moment(player.updatedAt).format(
+                          {moment(player[param.id].updatedAt).format(
                             "MMM D, YYYY @ h:mm A"
                           )}
                         </h6>
@@ -547,8 +562,8 @@ export default function Player() {
                       loading={loading}
                       height={450}
                       data={
-                        player.walletHistory
-                          ? player.walletHistory.sort(
+                        player[param.id].walletHistory
+                          ? player[param.id].walletHistory.sort(
                               (a, b) =>
                                 new Date(b.createdAt) - new Date(a.createdAt)
                             )
