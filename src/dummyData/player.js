@@ -55,4 +55,18 @@ export const PlayerData = [
     updatedAt: "2021-10-20T14:52:38.612Z",
     walletBalance: 400,
   },
+  {
+    banned: true,
+    bonusBalance: 300,
+    createdAt: "2021-10-20T14:52:38.612Z",
+    dob: "2002-08-20T14:52:19.182Z",
+    email: "jax@mailinator.com",
+    firstName: "Adeola",
+    id: "21bd5d1d-52a7-4c75-a13c-ff97b5be7acd",
+    lastName: "Eshemede",
+    phone: "07061606260",
+    role: "standard",
+    updatedAt: "2021-10-20T14:52:38.612Z",
+    walletBalance: 10000,
+  },
 ];
