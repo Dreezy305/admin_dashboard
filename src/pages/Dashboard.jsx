@@ -8,6 +8,7 @@ import ReactApexChart from "react-apexcharts";
 import Heading from "../components/Heading";
 import Menu from "../components/Menu";
 import { parseCurrency, parseNumber } from "../components/Utils";
+import { PlayerData } from "../dummyData/player";
 
 export default function Dashboard() {
   const [loading, setLoading] = React.useState(false);
@@ -50,7 +51,8 @@ export default function Dashboard() {
               <Col sm={24} lg={12}>
                 <Panel shaded bordered bodyFill className="counter">
                   <h2 className="">
-                    {dashboard.player ? parseNumber(dashboard.player) : 0}
+                    {/* {dashboard.player ? parseNumber(dashboard.player) : 0} */}
+                    {PlayerData.length}
                   </h2>
                   <p>Players</p>
                 </Panel>
