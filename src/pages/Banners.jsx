@@ -163,7 +163,7 @@ export default function Banners() {
                 <Cell dataKey="type" />
               </Column>
 
-              <Column width={200} fixed>
+              <Column width={100} fixed>
                 <HeaderCell>Banner</HeaderCell>
                 <Cell>
                   {(rowData) => {
@@ -184,7 +184,7 @@ export default function Banners() {
                 <Cell>
                   {(rowData) => {
                     return (
-                      <span>{rowData.active ? "active" : "disabled"}</span>
+                      <span>{rowData.status ? "active" : "disabled"}</span>
                     );
                   }}
                 </Cell>
@@ -207,14 +207,20 @@ export default function Banners() {
               <Column width={120} fixed="right">
                 <HeaderCell>Action</HeaderCell>
                 <Cell>
-                  {(rowData) => {
+                  {(rowData, key) => {
                     return (
                       <>
                         <span>
                           <Button
                             size="xs"
                             appearance="ghost"
-                            // href={`/banner/${rowData.id}`}
+                            // href={`/banner/${key}`}
+                            onClick={() =>
+                              router.push({
+                                pathname: `/banner/${key}`,
+                                state: key,
+                              })
+                            }
                           >
                             View
                           </Button>
@@ -224,7 +230,7 @@ export default function Banners() {
                           <Button
                             size="xs"
                             appearance="ghost"
-                            href={`/banner/${rowData.id}`}
+                            href={`/banner/${key}`}
                           >
                             {" "}
                             Edit{" "}
@@ -242,14 +248,14 @@ export default function Banners() {
               <Button
                 appearance="default"
                 onClick={prev}
-                disabled={banners.length < 50 ? true : false}
+                // disabled={banners.length < 50 ? true : false}
               >
                 &larr; Prev
               </Button>
               <Button
                 appearance="default"
                 onClick={next}
-                disabled={banners.length < 50 ? true : false}
+                // disabled={banners.length < 50 ? true : false}
               >
                 Next&rarr;
               </Button>

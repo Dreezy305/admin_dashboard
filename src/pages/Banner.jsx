@@ -18,6 +18,7 @@ import { useParams, useHistory } from "react-router-dom";
 import { useCookies } from "react-cookie";
 import Heading from "../components/Heading";
 import Menu from "../components/Menu";
+import { BannerData } from "../dummyData/banner";
 
 /* eslint-disable prettier/prettier */
 /* eslint-disable no-undef */
@@ -25,7 +26,7 @@ import Menu from "../components/Menu";
 /* eslint-disable no-unused-vars */
 export default function AddBanner() {
   const [loading, setLoading] = useState(false);
-  const [banner, setBanner] = useState({});
+  const [banner, setBanner] = useState(BannerData);
   const [image, setImage] = useState("");
   const [type, setType] = useState("");
   const [url, setUrl] = useState("");
@@ -46,7 +47,8 @@ export default function AddBanner() {
   }, []);
 
   useEffect(() => {
-    getBanner();
+    // getBanner();
+    console.log(param.id);
   }, []);
 
   const getBanner = async () => {
@@ -125,7 +127,9 @@ export default function AddBanner() {
     }
   };
 
-  const imageUrl = `${process.env.API_URL}static/banners/${image}`;
+  // console.log(banner[param.id].banner);
+
+  const imageUrl = banner[param.id].banner;
   const filelist = [
     {
       name: image,
