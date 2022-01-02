@@ -10,10 +10,11 @@ import { useCookies } from "react-cookie";
 import moment from "moment";
 import Heading from "../components/Heading";
 import Menu from "../components/Menu";
+import { BannerData } from "../dummyData/banner";
 
 export default function Banners() {
   const [loading, setLoading] = useState(false);
-  const [banners, setBanners] = useState([]);
+  const [banners, setBanners] = useState(BannerData);
   const [page, setPage] = useState(1);
   const [search, setSearch] = useState();
   const [role, setRole] = useState("");
@@ -31,7 +32,7 @@ export default function Banners() {
   }, []);
 
   useEffect(() => {
-    getBanners();
+    // getBanners();
   }, []);
 
   const getBanners = async () => {
@@ -102,7 +103,7 @@ export default function Banners() {
     }
   };
 
-  console.log(banners, "pp");
+  // console.log(banners, "pp");
 
   return (
     <div className="show-fake-browser sidebar-page">
@@ -148,23 +149,36 @@ export default function Banners() {
                 </Cell>
               </Column>
 
+              <Column width={150} fixed>
+                <HeaderCell>Title</HeaderCell>
+                <Cell>
+                  {(rowData, key) => {
+                    return <span>{rowData.title}</span>;
+                  }}
+                </Cell>
+              </Column>
+
+              <Column width={100} fixed>
+                <HeaderCell>Type</HeaderCell>
+                <Cell dataKey="type" />
+              </Column>
+
               <Column width={200} fixed>
                 <HeaderCell>Banner</HeaderCell>
                 <Cell>
                   {(rowData) => {
                     return (
                       <img
-                        src={`${process.env.API_URL}static/banners/${rowData.image}`}
+                        // src={`${process.env.API_URL}static/banners/${rowData.image}`}
+                        src={rowData.banner}
                         height={20}
+                        alt="banners"
                       />
                     );
                   }}
                 </Cell>
               </Column>
-              <Column width={100} fixed>
-                <HeaderCell>Type</HeaderCell>
-                <Cell dataKey="type" />
-              </Column>
+
               <Column width={100} fixed>
                 <HeaderCell>Status</HeaderCell>
                 <Cell>
@@ -195,17 +209,29 @@ export default function Banners() {
                 <Cell>
                   {(rowData) => {
                     return (
-                      <span>
-                        <Button
-                          size="xs"
-                          appearance="ghost"
-                          href={`/banner/${rowData.id}`}
-                        >
-                          {" "}
-                          Edit{" "}
-                        </Button>
-                        &nbsp;&nbsp;
-                      </span>
+                      <>
+                        <span>
+                          <Button
+                            size="xs"
+                            appearance="ghost"
+                            // href={`/banner/${rowData.id}`}
+                          >
+                            View
+                          </Button>
+                          &nbsp;&nbsp;
+                        </span>
+                        {/* <span>
+                          <Button
+                            size="xs"
+                            appearance="ghost"
+                            href={`/banner/${rowData.id}`}
+                          >
+                            {" "}
+                            Edit{" "}
+                          </Button>
+                          &nbsp;&nbsp;
+                        </span> */}
+                      </>
                     );
                   }}
                 </Cell>
