@@ -102,6 +102,8 @@ export default function Banners() {
     }
   };
 
+  console.log(banners, "pp");
+
   return (
     <div className="show-fake-browser sidebar-page">
       <Container>
