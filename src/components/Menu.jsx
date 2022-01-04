@@ -347,7 +347,10 @@ export default function Menu({ activeKeys, active }) {
             <Icon icon="circle" size="lg" style={{ verticalAlign: 0 }} />
             <span style={{ marginLeft: 15 }}>
               {" "}
-              <img src={require("../images/logo.png")} height="30" />
+              <img
+                src={require("../images/bet9ja-logo-white.png")}
+                height="30"
+              />
             </span>
           </div>
         </Sidenav.Header>
