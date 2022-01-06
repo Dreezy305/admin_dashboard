@@ -3,7 +3,8 @@ export const BannerData = [
     status: "Active",
     createdAt: "2021-10-20T14:57:51.240Z",
     id: 1,
-    banner: "https://betpay-api.zendost.co/static/banners/1637675700367.jpg",
+    banner:
+      "http://cdn4.iconfinder.com/data/icons/socialmediaicons_v120/48/google.png",
     title: "Bronze Banner",
     type: "slider",
     updatedAt: "2021-10-20T14:57:51.240Z",
@@ -13,7 +14,8 @@ export const BannerData = [
     status: "Active",
     createdAt: "2021-10-20T14:57:51.240Z",
     id: 2,
-    banner: "https://betpay-api.zendost.co/static/banners/1637675700367.jpg",
+    banner:
+      "http://cdn4.iconfinder.com/data/icons/socialmediaicons_v120/48/google.png",
     title: "Gold Banner",
     type: "slider",
     updatedAt: "2021-10-20T14:57:51.240Z",
@@ -22,7 +24,8 @@ export const BannerData = [
     status: "Inactive",
     createdAt: "2021-10-20T14:57:51.240Z",
     id: 3,
-    banner: "https://betpay-api.zendost.co/static/banners/1637675700367.jpg",
+    banner:
+      "http://cdn4.iconfinder.com/data/icons/socialmediaicons_v120/48/google.png",
     title: "Silver Banner",
     type: "slider",
     updatedAt: "2021-10-20T14:57:51.240Z",
