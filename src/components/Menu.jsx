@@ -258,6 +258,14 @@ export default function Menu({ activeKeys, active }) {
       >
         Banners
       </Nav.Item>
+      <Nav.Item
+        eventKey="6"
+        href="/games"
+        icon={<Icon icon="gamepad" />}
+        active={active === "6" ? active : false}
+      >
+        Games
+      </Nav.Item>
       {/* <Nav.Item
         eventKey="7"
         href="/notifications"
