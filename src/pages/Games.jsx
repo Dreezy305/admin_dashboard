@@ -49,6 +49,7 @@ export default function Games() {
 
   const [open, setOpen] = useState(false);
   const [isModal, setIsModal] = useState(false);
+  const [Id, setId] = useState(Number);
 
   useEffect(() => {
     let user = cookie && cookie.a_auth ? cookie.a_auth : null;
@@ -157,9 +158,12 @@ export default function Games() {
 
   const handleSearch = (val) => {
     val = val.trim();
+    console.log(players[val], "vv");
 
-    if (val) {
-      searchPlayer(val);
+    if (val === Number) {
+      // searchPlayer(val);
+      setPlayers(players[val]);
+      setId(val);
       setSearch(val);
     } else {
       getPlayers();
