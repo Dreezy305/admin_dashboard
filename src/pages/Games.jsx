@@ -94,7 +94,7 @@ export default function Games() {
     })
       .then((res) => res.json())
       .then((res) => {
-        console.log(res);
+        // console.log(res);
         if (res.success) {
           setPlayers(res.data);
           setLoading(false);
@@ -366,7 +366,9 @@ export default function Games() {
                   <HeaderCell>Title</HeaderCell>
                   <Cell>
                     {(rowData) => {
-                      console.log(rowData);
+                      {
+                        /* console.log(rowData); */
+                      }
                       return <span>{rowData.title}</span>;
                     }}
                   </Cell>
@@ -429,7 +431,9 @@ export default function Games() {
                   <HeaderCell>Action</HeaderCell>
                   <Cell>
                     {(rowData, key) => {
-                      console.log(key);
+                      {
+                        /* console.log(key); */
+                      }
                       return (
                         <>
                           <span>
