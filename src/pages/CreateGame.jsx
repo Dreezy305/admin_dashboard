@@ -28,7 +28,7 @@ export default function CreateGame() {
   const [role, setRole] = useState("");
   const router = useHistory();
   const [cookie] = useCookies(["a_auth"]);
-  const [cascade, setCascade] = useState(false);
+  const [cherry, setCherry] = useState("");
 
   useEffect(() => {
     let user = cookie && cookie.a_auth ? cookie.a_auth : null;
@@ -133,7 +133,8 @@ export default function CreateGame() {
                     ]}
                     placeholder="Bet type"
                     block
-                    onChange={setType}
+                    value={cherry}
+                    onChange={setCherry}
                   />
                   <br />
 
@@ -157,7 +158,7 @@ export default function CreateGame() {
                   />
                   <br />
 
-                  <Button appearance="primary" loading={loading} onClick={save}>
+                  <Button appearance="primary" loading={loading}>
                     Create
                   </Button>
                 </div>
