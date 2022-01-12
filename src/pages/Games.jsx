@@ -26,7 +26,6 @@ import ReactApexChart from "react-apexcharts";
 import moment from "moment";
 import Heading from "../components/Heading";
 import Menu from "../components/Menu";
-import Playermodal from "../components/playermodal";
 
 export default function Games() {
   const [loading, setLoading] = useState(false);
@@ -233,18 +232,18 @@ export default function Games() {
       <Container>
         <Menu />
         <Container>
-          <Heading page="Players" player="Howard Stern" />
+          <Heading page="Games" player="Howard Stern" />
           <Content className="container">
-            <Nav
+            {/* <Nav
               activeKey={tab}
               onSelect={setTab}
               style={{ marginBottom: 20 }}
               appearance="subtle"
-            >
-              <Nav.Item eventKey="table">Table</Nav.Item>
-              {/* <Nav.Item eventKey="graph">Graph</Nav.Item> */}
-              <Nav.Item eventKey="export">Export Data</Nav.Item>
-            </Nav>
+            > */}
+            {/* <Nav.Item eventKey="table">Table</Nav.Item> */}
+            {/* <Nav.Item eventKey="graph">Graph</Nav.Item> */}
+            {/* <Nav.Item eventKey="export">Export Data</Nav.Item> */}
+            {/* </Nav> */}
 
             {/* EXPORT DATA */}
             <div style={{ display: tab === "export" ? "block" : "none" }}>
@@ -314,7 +313,7 @@ export default function Games() {
                     <Input
                       size="lg"
                       type="search"
-                      placeholder="Search using name, email...."
+                      placeholder="Search using id, status...."
                       // onChange={handleSearch}
                     />
                   </Col>
