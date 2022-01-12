@@ -17,7 +17,8 @@ import {
   Alert,
   Modal,
 } from "rsuite";
-import { PlayerData } from "../dummyData/player";
+// import { PlayerData } from "../dummyData/player";
+import { GameData } from "../dummyData/game";
 
 const { Column, HeaderCell, Cell } = Table;
 import { useHistory } from "react-router-dom";
@@ -29,7 +30,7 @@ import Menu from "../components/Menu";
 
 export default function Games() {
   const [loading, setLoading] = useState(false);
-  const [players, setPlayers] = useState(PlayerData);
+  const [players, setPlayers] = useState(GameData);
   const [search, setSearch] = useState("");
   const [page, setPage] = useState(1);
   const [notify, setNotify] = useState();
@@ -322,7 +323,7 @@ export default function Games() {
 
               <h4 className="top-heading">
                 {players.length}
-                {players.length <= 1 ? " Player" : " Players"}
+                {players.length <= 1 ? "Game" : "Games"}
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 {/* <Button appearance="default" onClick={toggleModal}>
                   + Add player
@@ -349,26 +350,41 @@ export default function Games() {
                   </Cell>
                 </Column>
                 <Column width={200} fixed>
-                  <HeaderCell>Name</HeaderCell>
+                  <HeaderCell>Type</HeaderCell>
                   <Cell>
                     {(rowData) => {
                       console.log(rowData);
                       return (
                         <span>
-                          {rowData.firstName} {rowData.lastName}
+                          game types
+                          {/* {rowData.firstName} {rowData.lastName} */}
                         </span>
                       );
                     }}
                   </Cell>
                 </Column>
                 <Column width={200} fixed>
+                  <HeaderCell>Title</HeaderCell>
+                  <Cell>
+                    {(rowData) => {
+                      console.log(rowData);
+                      return (
+                        <span>
+                          game title
+                          {/* {rowData.firstName} {rowData.lastName} */}
+                        </span>
+                      );
+                    }}
+                  </Cell>
+                </Column>
+                {/* <Column width={200} fixed>
                   <HeaderCell>Email</HeaderCell>
                   <Cell dataKey="email" />
-                </Column>
-                <Column width={150} fixed>
+                </Column> */}
+                {/* <Column width={150} fixed>
                   <HeaderCell>Phone</HeaderCell>
                   <Cell dataKey="phone" />
-                </Column>
+                </Column> */}
 
                 {/* <Column width={100} fixed>
                   <HeaderCell>Balance</HeaderCell>
@@ -432,7 +448,7 @@ export default function Games() {
                               appearance="ghost"
                               onClick={() => {
                                 router.push({
-                                  pathname: `/player/${key}`,
+                                  pathname: `/game/${key}`,
                                   state: key,
                                 });
                                 // handleOpen();
@@ -441,13 +457,6 @@ export default function Games() {
                             >
                               {" "}
                               View
-                            </Button>{" "}
-                            &nbsp;
-                          </span>
-                          <span>
-                            <Button size="xs" appearance="ghost">
-                              {" "}
-                              Edit
                             </Button>{" "}
                             &nbsp;
                           </span>
