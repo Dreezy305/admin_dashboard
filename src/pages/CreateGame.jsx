@@ -29,6 +29,8 @@ export default function CreateGame() {
   const router = useHistory();
   const [cookie] = useCookies(["a_auth"]);
   const [cherry, setCherry] = useState("");
+  const [title, setTitle] = useState("");
+  const [count, setCount] = useState(Number);
 
   useEffect(() => {
     let user = cookie && cookie.a_auth ? cookie.a_auth : null;
@@ -89,8 +91,6 @@ export default function CreateGame() {
     }
   };
 
-  console.log(cherry, "cc");
-
   return (
     <div className="show-fake-browser sidebar-page">
       <Container>
@@ -109,14 +109,16 @@ export default function CreateGame() {
                   <Input
                     type="title"
                     placeholder="Game Title"
-                    // onChange={setUrl}
+                    value={title}
+                    onChange={setTitle}
                   />
                   <br />
 
                   <Input
                     type="Number"
                     placeholder="Number Count"
-                    // onChange={setUrl}
+                    value={count}
+                    onChange={setCount}
                   />
                   <br />
 
