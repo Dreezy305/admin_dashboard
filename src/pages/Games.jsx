@@ -349,31 +349,21 @@ export default function Games() {
                     }}
                   </Cell>
                 </Column>
-                <Column width={200} fixed>
+                <Column width={150} fixed>
                   <HeaderCell>Type</HeaderCell>
                   <Cell>
                     {(rowData) => {
                       console.log(rowData);
-                      return (
-                        <span>
-                          game types
-                          {/* {rowData.firstName} {rowData.lastName} */}
-                        </span>
-                      );
+                      return <span>{rowData.type}</span>;
                     }}
                   </Cell>
                 </Column>
-                <Column width={200} fixed>
+                <Column width={150} fixed>
                   <HeaderCell>Title</HeaderCell>
                   <Cell>
                     {(rowData) => {
                       console.log(rowData);
-                      return (
-                        <span>
-                          game title
-                          {/* {rowData.firstName} {rowData.lastName} */}
-                        </span>
-                      );
+                      return <span>{rowData.title}</span>;
                     }}
                   </Cell>
                 </Column>
@@ -413,11 +403,7 @@ export default function Games() {
                   <HeaderCell>Status</HeaderCell>
                   <Cell>
                     {(rowData, key) => {
-                      return (
-                        <span>
-                          {rowData.banned === true ? "banned" : "active"}
-                        </span>
-                      );
+                      return <span>{rowData.status}</span>;
                     }}
                   </Cell>
                 </Column>
