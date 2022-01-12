@@ -331,7 +331,9 @@ export default function Games() {
                   {players.length <= 1 ? "Game" : "Games"}
                 </span>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <Button appearance="default">+ Create Game</Button>
+                <Button appearance="default" href="/creategame/add">
+                  + Create Game
+                </Button>
               </h4>
 
               <Table

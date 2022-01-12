@@ -54,3 +54,13 @@ export const GameData = [
     updatedAt: "2021-10-20T14:52:38.612Z",
   },
 ];
+
+export const GameOptions = [
+  "NAP-1",
+  "NAP-2",
+  "NAP-3",
+  "NAP-4",
+  "NAP-5",
+  "PAM-1",
+  "PAM-2",
+];

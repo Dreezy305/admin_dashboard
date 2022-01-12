@@ -37,6 +37,7 @@ import AddNotification from "../pages/AddNotification";
 import SiteAnalyticss from "../pages/SiteAnalytics";
 import Games from "../pages/Games";
 import Game from "../pages/Game";
+import CreateGame from "../pages/CreateGame";
 
 export default function Routes() {
   return (
@@ -74,6 +75,7 @@ export default function Routes() {
         <Route exact path="/site-analytics" component={SiteAnalyticss} />
         <Route exact path="/games" component={Games} />
         <Route exact path="/game/:id" component={Game} />
+        <Route exact path="/creategame/add" component={CreateGame} />
         <Route path="/login" component={Login} />
         <Route path="/no-access" component={Noaccess} />
         <Route component={Notfound} />
