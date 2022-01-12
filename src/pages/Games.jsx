@@ -448,6 +448,13 @@ export default function Games() {
                             </Button>{" "}
                             &nbsp;
                           </span>
+                          <span>
+                            <Button size="xs" appearance="ghost">
+                              {" "}
+                              Edit
+                            </Button>{" "}
+                            &nbsp;
+                          </span>
                         </>
                       );
                     }}
