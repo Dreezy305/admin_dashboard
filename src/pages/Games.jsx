@@ -354,17 +354,6 @@ export default function Games() {
                   </Cell>
                 </Column>
                 <Column width={150} fixed>
-                  <HeaderCell>Type</HeaderCell>
-                  <Cell>
-                    {(rowData) => {
-                      {
-                        /* console.log(rowData); */
-                      }
-                      return <span>{rowData.type}</span>;
-                    }}
-                  </Cell>
-                </Column>
-                <Column width={150} fixed>
                   <HeaderCell>Title</HeaderCell>
                   <Cell>
                     {(rowData) => {
@@ -375,6 +364,7 @@ export default function Games() {
                     }}
                   </Cell>
                 </Column>
+
                 {/* <Column width={200} fixed>
                   <HeaderCell>Email</HeaderCell>
                   <Cell dataKey="email" />
