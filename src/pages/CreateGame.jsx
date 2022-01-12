@@ -89,6 +89,8 @@ export default function CreateGame() {
     }
   };
 
+  console.log(cherry, "cc");
+
   return (
     <div className="show-fake-browser sidebar-page">
       <Container>
