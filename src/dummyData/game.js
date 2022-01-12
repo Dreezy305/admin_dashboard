@@ -5,6 +5,7 @@ export const GameData = [
     type: "NAP-1",
     status: "active",
     createdAt: "2021-10-20T14:52:38.612Z",
+    resultTYpe: "NAP-1",
   },
   {
     id: 2,
@@ -12,6 +13,7 @@ export const GameData = [
     type: "NAP-2",
     status: "active",
     createdAt: "2021-10-20T14:52:38.612Z",
+    resultType: "NAP-2",
   },
   {
     id: 3,
@@ -19,6 +21,7 @@ export const GameData = [
     type: "NAP-3",
     status: "active",
     createdAt: "2021-10-20T14:52:38.612Z",
+    resultType: "NAP-3",
   },
   {
     id: 4,
@@ -26,6 +29,7 @@ export const GameData = [
     type: "NAP-4",
     status: "active",
     createdAt: "2021-10-20T14:52:38.612Z",
+    resultType: "NAP-4",
   },
   {
     id: 5,
@@ -33,6 +37,7 @@ export const GameData = [
     type: "NO LEG",
     status: "active",
     createdAt: "2021-10-20T14:52:38.612Z",
+    resultType: "NO LEG",
   },
   {
     id: 6,
@@ -40,5 +45,6 @@ export const GameData = [
     type: "STRAIGHT",
     status: "active",
     createdAt: "2021-10-20T14:52:38.612Z",
+    resultType: "STRAIGHT",
   },
 ];
