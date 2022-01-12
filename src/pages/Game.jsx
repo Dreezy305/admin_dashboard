@@ -273,7 +273,8 @@ export default function Game() {
     );
   };
 
-  // console.log();
+  console.log(player, "pp1");
+  console.log(param, "pp2");
 
   return (
     <div className="show-fake-browser sidebar-page">
@@ -413,8 +414,8 @@ export default function Game() {
                 style={{ backgroundColor: "#fff" }}
               >
                 <div className="form">
-                  <h3>{player.title}</h3>
-                  <h4>
+                  <h3>{player[param.id].title}</h3>
+                  {/* <h4>
                     <span>
                       {" "}
                       Balance:{" "}
@@ -439,7 +440,7 @@ export default function Game() {
                           : 0
                       )}
                     </span>
-                  </h4>
+                  </h4> */}
                   {/* <div style={{ marginTop: 30 }}>
                     <Button appearance="ghost" onClick={toggleModal}>
                       Edit
@@ -464,7 +465,7 @@ export default function Game() {
                   <div
                     style={{ display: tab === "overview" ? "block" : "none" }}
                   >
-                    <Row>
+                    {/* <Row>
                       <Col sm={24} lg={12}>
                         {" "}
                         <h6> Date of birth: </h6>
@@ -475,8 +476,17 @@ export default function Game() {
                           {moment(player[param.id].dob).format("MMM D, YYYY")}
                         </h6>
                       </Col>
-                    </Row>
+                    </Row> */}
                     <Row>
+                      <Col sm={24} lg={12}>
+                        {" "}
+                        <h6> Type: </h6>
+                      </Col>
+                      <Col sm={24} lg={12}>
+                        <h6> {player[param.id].type}</h6>
+                      </Col>
+                    </Row>
+                    {/* <Row>
                       <hr />
                       <Col sm={24} lg={12}>
                         {" "}
@@ -485,8 +495,8 @@ export default function Game() {
                       <Col sm={24} lg={12}>
                         <h6> {player[param.id].email}</h6>
                       </Col>
-                    </Row>
-                    <Row>
+                    </Row> */}
+                    {/* <Row>
                       <hr />
                       <Col sm={24} lg={12}>
                         {" "}
@@ -495,8 +505,8 @@ export default function Game() {
                       <Col sm={24} lg={12}>
                         <h6> {player[param.id].phone}</h6>
                       </Col>
-                    </Row>
-                    <Row>
+                    </Row> */}
+                    {/* <Row>
                       <hr />
                       <Col sm={24} lg={12}>
                         {" "}
@@ -510,7 +520,7 @@ export default function Game() {
                             : "Super player"}
                         </h6>
                       </Col>
-                    </Row>
+                    </Row> */}
                     <Row>
                       <hr />
                       <Col sm={24} lg={12}>
@@ -518,10 +528,7 @@ export default function Game() {
                         <h6> Status: </h6>
                       </Col>
                       <Col sm={24} lg={12}>
-                        <h6>
-                          {" "}
-                          {player[param.id].banned ? "banned" : "active"}
-                        </h6>
+                        <h6> {player[param.id].status}</h6>
                       </Col>
                     </Row>
                     <Row>
