@@ -12,6 +12,8 @@ import {
   Input,
   Button,
   Alert,
+  CheckTreePicker,
+  Toggle,
 } from "rsuite";
 import { useHistory } from "react-router-dom";
 import { useCookies } from "react-cookie";
@@ -26,6 +28,7 @@ export default function CreateGame() {
   const [role, setRole] = useState("");
   const router = useHistory();
   const [cookie] = useCookies(["a_auth"]);
+  const [cascade, setCascade] = useState(false);
 
   useEffect(() => {
     let user = cookie && cookie.a_auth ? cookie.a_auth : null;
@@ -115,16 +118,18 @@ export default function CreateGame() {
                   />
                   <br />
 
-                  <InputPicker
+                  <CheckTreePicker
                     data={[
-                      { value: "side-right", label: "Side right desktop" },
-                      { value: "side-left", label: "Side left desktop" },
-                      { value: "top", label: "Top desktop" },
-                      { value: "top-mobile", label: "Top mobile" },
-                      { value: "box-right", label: "Box right desktop" },
-                      { value: "box-left", label: "Box left desktop" },
-                      { value: "box-mobile", label: "Box mobile" },
-                      { value: "slider", label: "Slider" },
+                      { value: "NAP-1", label: "NAP-1" },
+                      { value: "NAP-2", label: "NAP-2" },
+                      { value: "NAP-3", label: "NAP-3" },
+                      { value: "NAP-4", label: "NAP-4" },
+                      { value: "NAP-5", label: "NAP-5" },
+                      { value: "PAM-1", label: "PAM-1" },
+                      { value: "PAM-2", label: "PAM-2" },
+                      { value: "PAM-3", label: "PAM-3" },
+                      { value: "PAM-4", label: "PAM-4" },
+                      { value: "PAM-5", label: "PAM-5" },
                     ]}
                     placeholder="Bet type"
                     block
