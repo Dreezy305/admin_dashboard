@@ -25,14 +25,14 @@ const { Column, HeaderCell, Cell } = Table;
 import Heading from "../components/Heading";
 import Menu from "../components/Menu";
 import { parseCurrency } from "../components/Utils";
-import { PlayerData } from "../dummyData/player";
+// import { PlayerData } from "../dummyData/player";
 import { GameData } from "../dummyData/game";
 
 export default function Game() {
   const [loading, setLoading] = React.useState(false);
   const [depositLoading, setDepositLoading] = React.useState(false);
   const [withdrawLoading, setWithdrawLoading] = React.useState(false);
-  const [player, setPlayer] = useState(PlayerData);
+  const [player, setPlayer] = useState(GameData);
   const [notify, setNotify] = React.useState();
   const [tab, setTab] = React.useState("overview");
   const [modal, setModal] = React.useState(false);
@@ -413,9 +413,7 @@ export default function Game() {
                 style={{ backgroundColor: "#fff" }}
               >
                 <div className="form">
-                  <h3>
-                    {player[param.id].firstName} {player[param.id].lastName}
-                  </h3>
+                  <h3>{player.title}</h3>
                   <h4>
                     <span>
                       {" "}

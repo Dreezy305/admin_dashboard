@@ -355,7 +355,9 @@ export default function Games() {
                   <HeaderCell>Type</HeaderCell>
                   <Cell>
                     {(rowData) => {
-                      console.log(rowData);
+                      {
+                        /* console.log(rowData); */
+                      }
                       return <span>{rowData.type}</span>;
                     }}
                   </Cell>
