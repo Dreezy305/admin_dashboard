@@ -21,7 +21,7 @@ export const GameData = [
     createdAt: "2021-10-20T14:52:38.612Z",
   },
   {
-    id: 3,
+    id: 4,
     title: "Legendary Lotto",
     type: "NAP-4",
     status: "active",

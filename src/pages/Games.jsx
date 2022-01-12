@@ -323,7 +323,9 @@ export default function Games() {
 
               <h4 className="top-heading">
                 {players.length}
-                {players.length <= 1 ? "Game" : "Games"}
+                <span className="" style={{ marginLeft: "5px" }}>
+                  {players.length <= 1 ? "Game" : "Games"}
+                </span>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 {/* <Button appearance="default" onClick={toggleModal}>
                   + Add player
