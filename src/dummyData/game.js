@@ -27,4 +27,18 @@ export const GameData = [
     status: "active",
     createdAt: "2021-10-20T14:52:38.612Z",
   },
+  {
+    id: 5,
+    title: "Super Monday",
+    type: "NO LEG",
+    status: "active",
+    createdAt: "2021-10-20T14:52:38.612Z",
+  },
+  {
+    id: 6,
+    title: "Lion Share",
+    type: "STRAIGHT",
+    status: "active",
+    createdAt: "2021-10-20T14:52:38.612Z",
+  },
 ];
