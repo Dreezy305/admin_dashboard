@@ -331,9 +331,7 @@ export default function Games() {
                   {players.length <= 1 ? "Game" : "Games"}
                 </span>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                {/* <Button appearance="default" onClick={toggleModal}>
-                  + Add player
-                </Button> */}
+                <Button appearance="default">+ Create Game</Button>
               </h4>
 
               <Table
