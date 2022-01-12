@@ -145,14 +145,14 @@ export default function CreateGame() {
 
                   <InputPicker
                     data={[
-                      { value: "side-right", label: "Side right desktop" },
-                      { value: "side-left", label: "Side left desktop" },
-                      { value: "top", label: "Top desktop" },
-                      { value: "top-mobile", label: "Top mobile" },
-                      { value: "box-right", label: "Box right desktop" },
-                      { value: "box-left", label: "Box left desktop" },
-                      { value: "box-mobile", label: "Box mobile" },
-                      { value: "slider", label: "Slider" },
+                      { value: "5", label: "5" },
+                      { value: "10", label: "10" },
+                      { value: "15", label: "15" },
+                      { value: "20", label: "20" },
+                      { value: "25", label: "25" },
+                      { value: "30", label: "30" },
+                      { value: "35", label: "35" },
+                      { value: "40", label: "40" },
                     ]}
                     placeholder="Interval"
                     block
