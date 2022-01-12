@@ -5,7 +5,7 @@ export const GameData = [
     type: ["NAP-1"],
     status: "active",
     createdAt: "2021-10-20T14:52:38.612Z",
-    resultTYpe: "NAP-1",
+    resultType: "NAP-1",
     updatedAt: "2021-10-20T14:52:38.612Z",
   },
   {
