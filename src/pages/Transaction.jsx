@@ -10,10 +10,11 @@ import { useHistory } from "react-router-dom";
 import { useCookies } from "react-cookie";
 import Heading from "../components/Heading";
 import Menu from "../components/Menu";
+import { TransactionData } from "../dummyData/transactions";
 
 export default function Transaction() {
   const [loading, setLoading] = React.useState(false);
-  const [transaction, setTransaction] = useState({});
+  const [transaction, setTransaction] = useState(TransactionData);
   const param = useParams();
   const [role, setRole] = useState("");
   const router = useHistory();
@@ -28,7 +29,7 @@ export default function Transaction() {
   }, []);
 
   useEffect(() => {
-    getTransaction();
+    // getTransaction();
   }, []);
 
   const getTransaction = async () => {
@@ -49,6 +50,7 @@ export default function Transaction() {
       });
   };
   console.log(transaction, "tt");
+  console.log(param.id, "pp");
   return (
     <div className="show-fake-browser sidebar-page">
       <Container>
@@ -72,7 +74,11 @@ export default function Transaction() {
                       {new Intl.NumberFormat("en-NG", {
                         style: "currency",
                         currency: "NGN",
-                      }).format(transaction.amount ? transaction.amount : 0)}
+                      }).format(
+                        transaction[param.id].amount
+                          ? transaction[param.id].amount
+                          : 0
+                      )}
                     </span>
                   </h4>
 

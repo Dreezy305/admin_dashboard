@@ -341,7 +341,7 @@ export default function Transactions() {
                   <Input
                     size="lg"
                     type="search"
-                    placeholder="Search amount or id...."
+                    placeholder="Search by reference id, amount or status...."
                     onChange={handleSearch}
                   />
                 </Col>
