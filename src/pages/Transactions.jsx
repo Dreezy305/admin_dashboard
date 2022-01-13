@@ -24,10 +24,11 @@ import ReactApexChart from "react-apexcharts";
 import moment from "moment";
 import Heading from "../components/Heading";
 import Menu from "../components/Menu";
+import { TransactionData } from "../dummyData/transactions";
 
 export default function Transactions() {
   const [loading, setLoading] = useState(false);
-  const [transactions, setTransactions] = useState([]);
+  const [transactions, setTransactions] = useState(TransactionData);
   const [page, setPage] = useState(1);
   const [search, setSearch] = useState();
   const [status, setStatus] = useState();
@@ -53,8 +54,8 @@ export default function Transactions() {
   }, []);
 
   useEffect(() => {
-    getTransactions();
-    graphTransaction();
+    // getTransactions();
+    // graphTransaction();
   }, []);
 
   const handleStatus = (val) => {
@@ -259,7 +260,7 @@ export default function Transactions() {
               appearance="subtle"
             >
               <Nav.Item eventKey="table">Table</Nav.Item>
-              <Nav.Item eventKey="graph">Graph</Nav.Item>
+              {/* <Nav.Item eventKey="graph">Graph</Nav.Item> */}
               <Nav.Item eventKey="export">Export Data</Nav.Item>
             </Nav>
             <div style={{ display: tab === "export" ? "block" : "none" }}>
