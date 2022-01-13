@@ -295,7 +295,7 @@ export default function Tickets() {
                     size="lg"
                     loading={loading}
                     color="blue"
-                    onClick={exportTicket}
+                    // onClick={exportTicket}
                   >
                     Export Data
                   </Button>
