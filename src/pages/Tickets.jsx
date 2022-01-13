@@ -53,7 +53,7 @@ export default function Tickets() {
   }, []);
 
   useEffect(() => {
-    getTickets();
+    // getTickets();
     graphTicket();
   }, []);
 
@@ -338,7 +338,7 @@ export default function Tickets() {
                     ]}
                     placeholder="Status"
                     required
-                    onChange={handleStatus}
+                    // onChange={handleStatus}
                     className="ticket2"
                     block
                     size="lg"
@@ -348,8 +348,8 @@ export default function Tickets() {
                   <Input
                     size="lg"
                     type="search"
-                    placeholder="Search amount or id...."
-                    onChange={handleSearch}
+                    placeholder="Search using ticket id, amount or status...."
+                    // onChange={handleSearch}
                   />
                 </Col>
               </Row>
@@ -371,7 +371,7 @@ export default function Tickets() {
                   <HeaderCell>ID</HeaderCell>
                   <Cell dataKey="ticketId" />
                 </Column>
-                <Column width={200} fixed>
+                <Column width={150} fixed>
                   <HeaderCell>Amount</HeaderCell>
                   <Cell dataKey="amount" />
                 </Column>
@@ -381,9 +381,9 @@ export default function Tickets() {
                     {(rowData) => {
                       return (
                         <span>
-                          {rowData.player ? rowData.player.firstName : ""}{" "}
-                          &nbsp;
-                          {rowData.player ? rowData.player.lastName : ""}
+                          {/* {rowData.player ? rowData.player.firstName : ""}{" "}
+                          &nbsp; */}
+                          {rowData.playerName ? rowData.playerName : ""}
                         </span>
                       );
                     }}
