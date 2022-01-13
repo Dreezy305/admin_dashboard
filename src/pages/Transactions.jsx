@@ -243,6 +243,8 @@ export default function Transactions() {
     },
   };
 
+  console.log(transactions, "tt");
+
   return (
     <div className="show-fake-browser sidebar-page">
       <Container>
