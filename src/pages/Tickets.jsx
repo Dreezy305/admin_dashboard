@@ -29,7 +29,7 @@ import { TicketsData } from "../dummyData/tickets";
 
 export default function Tickets() {
   const [loading, setLoading] = useState(false);
-  const [tickets, setTickets] = useState([]);
+  const [tickets, setTickets] = useState(TicketsData);
   const [page, setPage] = useState(1);
   const [search, setSearch] = useState();
   const [status, setStatus] = useState();
