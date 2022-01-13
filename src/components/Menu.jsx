@@ -274,6 +274,14 @@ export default function Menu({ activeKeys, active }) {
       >
         Transactions
       </Nav.Item>
+      <Nav.Item
+        eventKey="2"
+        href="/tickets"
+        icon={<Icon icon="ticket" />}
+        active={active === "2" ? active : false}
+      >
+        Tickets
+      </Nav.Item>
       {/* <Nav.Item
         eventKey="7"
         href="/notifications"
