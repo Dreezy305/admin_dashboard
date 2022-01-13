@@ -259,7 +259,7 @@ export default function Tickets() {
               // reversed
             >
               <Nav.Item eventKey="table">Table</Nav.Item>
-              <Nav.Item eventKey="graph">Graph</Nav.Item>
+              {/* <Nav.Item eventKey="graph">Graph</Nav.Item> */}
               <Nav.Item eventKey="export">Export Data</Nav.Item>
             </Nav>
             <div style={{ display: tab === "export" ? "block" : "none" }}>
@@ -457,15 +457,15 @@ export default function Tickets() {
               <div style={{ textAlign: "center", marginTop: 20 }}>
                 <Button
                   appearance="default"
-                  onClick={prev}
-                  disabled={page === 1 ? true : false}
+                  // onClick={prev}
+                  // disabled={page === 1 ? true : false}
                 >
                   &larr; Prev
                 </Button>
                 <Button
                   appearance="default"
-                  onClick={next}
-                  disabled={tickets.length < 50 ? true : false}
+                  // onClick={next}
+                  // disabled={tickets.length < 50 ? true : false}
                 >
                   Next&rarr;
                 </Button>
