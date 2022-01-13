@@ -3,7 +3,16 @@
 /* eslint-disable prettier/prettier */
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect } from "react";
-import { Container, Content, Panel, Row, Col, Button } from "rsuite";
+import {
+  Container,
+  Content,
+  Panel,
+  Row,
+  Col,
+  Button,
+  Tag,
+  TagGroup,
+} from "rsuite";
 import { useParams } from "react-router-dom";
 import moment from "moment";
 import { useHistory } from "react-router-dom";
@@ -68,7 +77,19 @@ export default function Transaction() {
                 style={{ backgroundColor: "#fff" }}
               >
                 <div className="form">
-                  <h3>{transaction[param.id - 1].type}</h3>
+                  <h3
+                    style={{ display: "flex", justifyContent: "space-between" }}
+                  >
+                    <span>{transaction[param.id - 1].type}</span>
+                    {transaction[param.id - 1].type === "withdrawal" && (
+                      <span style={{ cursor: "pointer" }}>
+                        <TagGroup>
+                          <Tag color="green">Accept</Tag>
+                          <Tag color="red">Decline</Tag>
+                        </TagGroup>
+                      </span>
+                    )}
+                  </h3>
                   <h4>
                     <span>
                       {" "}
