@@ -48,7 +48,7 @@ export default function Transaction() {
         }
       });
   };
-
+  console.log(transaction, "tt");
   return (
     <div className="show-fake-browser sidebar-page">
       <Container>

@@ -244,8 +244,6 @@ export default function Transactions() {
     },
   };
 
-  console.log(transactions, "tt");
-
   return (
     <div className="show-fake-browser sidebar-page">
       <Container>
@@ -372,7 +370,7 @@ export default function Transactions() {
                   </Cell>
                 </Column>
 
-                <Column width={150} fixed>
+                <Column width={100} fixed>
                   <HeaderCell>Reference Id</HeaderCell>
                   <Cell dataKey="referenceId" />
                 </Column>
