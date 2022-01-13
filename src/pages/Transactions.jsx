@@ -371,6 +371,12 @@ export default function Transactions() {
                     }}
                   </Cell>
                 </Column>
+
+                <Column width={150} fixed>
+                  <HeaderCell>Reference Id</HeaderCell>
+                  <Cell dataKey="referenceId" />
+                </Column>
+
                 <Column width={150} fixed>
                   <HeaderCell>Amount</HeaderCell>
                   <Cell>
@@ -388,9 +394,9 @@ export default function Transactions() {
                     }}
                   </Cell>
                 </Column>
-                <Column width={300} fixed>
-                  <HeaderCell>Narration</HeaderCell>
-                  <Cell dataKey="narration" />
+                <Column width={150} fixed>
+                  <HeaderCell>Player</HeaderCell>
+                  <Cell dataKey="playerName" />
                 </Column>
                 <Column width={100} fixed>
                   <HeaderCell>Type</HeaderCell>
@@ -462,15 +468,15 @@ export default function Transactions() {
               <div style={{ textAlign: "center", marginTop: 20 }}>
                 <Button
                   appearance="default"
-                  onClick={prev}
-                  disabled={page === 1 ? true : false}
+                  // onClick={prev}
+                  // disabled={page === 1 ? true : false}
                 >
                   &larr; Prev
                 </Button>
                 <Button
                   appearance="default"
-                  onClick={next}
-                  disabled={transactions.length < 50 ? true : false}
+                  // onClick={next}
+                  // disabled={transactions.length < 50 ? true : false}
                 >
                   Next&rarr;
                 </Button>
