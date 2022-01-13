@@ -443,7 +443,7 @@ export default function Tickets() {
                           <Button
                             size="xs"
                             appearance="ghost"
-                            href={`/ticket/${rowData.ticketId}`}
+                            // href={`/ticket/${rowData.ticketId}`}
                           >
                             {" "}
                             View{" "}
