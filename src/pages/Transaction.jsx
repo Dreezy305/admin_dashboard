@@ -81,14 +81,23 @@ export default function Transaction() {
                     style={{ display: "flex", justifyContent: "space-between" }}
                   >
                     <span>{transaction[param.id - 1].type}</span>
-                    {transaction[param.id - 1].type === "withdrawal" && (
-                      <span style={{ cursor: "pointer" }}>
-                        <TagGroup>
-                          <Tag color="green">Accept</Tag>
-                          <Tag color="red">Decline</Tag>
-                        </TagGroup>
-                      </span>
-                    )}
+                    {transaction[param.id - 1].type === "withdrawal" &&
+                      transaction[param.id - 1].status === "pending" && (
+                        <span style={{ cursor: "pointer" }}>
+                          <TagGroup>
+                            <Tag color="green">
+                              <b style={{ textTransform: "capitalize" }}>
+                                accept
+                              </b>
+                            </Tag>
+                            <Tag color="red">
+                              <b style={{ textTransform: "capitalize" }}>
+                                decline
+                              </b>
+                            </Tag>
+                          </TagGroup>
+                        </span>
+                      )}
                   </h3>
                   <h4>
                     <span>

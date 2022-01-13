@@ -14,7 +14,7 @@ export const TransactionData = [
     amount: 250000,
     type: "withdrawal",
     playerName: "Olalekan Animashaun",
-    status: "success",
+    status: "pending",
     createdAt: "2021-10-20T14:52:38.612Z",
   },
   {

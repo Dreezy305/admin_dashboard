@@ -294,7 +294,7 @@ export default function Transactions() {
                     size="lg"
                     loading={loading}
                     color="blue"
-                    onClick={exportTransaction}
+                    // onClick={exportTransaction}
                   >
                     Export Data
                   </Button>
