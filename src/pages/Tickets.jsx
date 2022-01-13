@@ -25,6 +25,7 @@ import ReactApexChart from "react-apexcharts";
 import moment from "moment";
 import Heading from "../components/Heading";
 import Menu from "../components/Menu";
+import { TicketsData } from "../dummyData/tickets";
 
 export default function Tickets() {
   const [loading, setLoading] = useState(false);
