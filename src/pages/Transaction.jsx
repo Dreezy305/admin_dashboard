@@ -56,7 +56,7 @@ export default function Transaction() {
       <Container>
         <Menu />
         <Container>
-          <Heading page={"Transaction: " + transaction.referenceId} />
+          <Heading page={"Transaction: " + transaction[param.id].referenceId} />
           <Content className="container">
             <div className="inner">
               <Panel
@@ -89,7 +89,7 @@ export default function Transaction() {
                       <h6> Type: </h6>
                     </Col>
                     <Col sm={24} lg={12}>
-                      <h6> {transaction.type}</h6>
+                      <h6> {transaction[param.id].type}</h6>
                     </Col>
                   </Row>
                   <Row>
@@ -99,10 +99,10 @@ export default function Transaction() {
                       <h6> Reference ID: </h6>
                     </Col>
                     <Col sm={24} lg={12}>
-                      <h6> {transaction.referenceId}</h6>
+                      <h6> {transaction[param.id].referenceId}</h6>
                     </Col>
                   </Row>
-                  <Row>
+                  {/* <Row>
                     <hr />
                     <Col sm={24} lg={12}>
                       {" "}
@@ -111,16 +111,16 @@ export default function Transaction() {
                     <Col sm={24} lg={12}>
                       <h6> {transaction.narration}</h6>
                     </Col>
-                  </Row>
+                  </Row> */}
 
                   <Row>
                     <hr />
                     <Col sm={24} lg={12}>
                       {" "}
-                      <h6> Provider: </h6>
+                      <h6> Player: </h6>
                     </Col>
                     <Col sm={24} lg={12}>
-                      <h6> {transaction.provider}</h6>
+                      <h6> {transaction[param.id].playerName}</h6>
                     </Col>
                   </Row>
                   <Row>
@@ -130,7 +130,7 @@ export default function Transaction() {
                       <h6> Status: </h6>
                     </Col>
                     <Col sm={24} lg={12}>
-                      <h6> {transaction.status}</h6>
+                      <h6> {transaction[param.id].status}</h6>
                     </Col>
                   </Row>
                   <Row>
@@ -142,7 +142,7 @@ export default function Transaction() {
                     <Col sm={24} lg={12}>
                       <h6>
                         {" "}
-                        {moment(transaction.createdAt).format(
+                        {moment(transaction[param.id].createdAt).format(
                           "MMM D, YYYY @ h:mm A"
                         )}
                       </h6>
