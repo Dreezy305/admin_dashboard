@@ -56,7 +56,9 @@ export default function Transaction() {
       <Container>
         <Menu />
         <Container>
-          <Heading page={"Transaction: " + transaction[param.id].referenceId} />
+          <Heading
+            page={"Transaction: " + transaction[param.id - 1].referenceId}
+          />
           <Content className="container">
             <div className="inner">
               <Panel
@@ -66,7 +68,7 @@ export default function Transaction() {
                 style={{ backgroundColor: "#fff" }}
               >
                 <div className="form">
-                  <h3>{transaction.name}</h3>
+                  <h3>{transaction[param.id - 1].type}</h3>
                   <h4>
                     <span>
                       {" "}
@@ -75,8 +77,8 @@ export default function Transaction() {
                         style: "currency",
                         currency: "NGN",
                       }).format(
-                        transaction[param.id].amount
-                          ? transaction[param.id].amount
+                        transaction[param.id - 1].amount
+                          ? transaction[param.id - 1].amount
                           : 0
                       )}
                     </span>
@@ -89,7 +91,7 @@ export default function Transaction() {
                       <h6> Type: </h6>
                     </Col>
                     <Col sm={24} lg={12}>
-                      <h6> {transaction[param.id].type}</h6>
+                      <h6> {transaction[param.id - 1].type}</h6>
                     </Col>
                   </Row>
                   <Row>
@@ -99,7 +101,7 @@ export default function Transaction() {
                       <h6> Reference ID: </h6>
                     </Col>
                     <Col sm={24} lg={12}>
-                      <h6> {transaction[param.id].referenceId}</h6>
+                      <h6> {transaction[param.id - 1].referenceId}</h6>
                     </Col>
                   </Row>
                   {/* <Row>
@@ -120,7 +122,7 @@ export default function Transaction() {
                       <h6> Player: </h6>
                     </Col>
                     <Col sm={24} lg={12}>
-                      <h6> {transaction[param.id].playerName}</h6>
+                      <h6> {transaction[param.id - 1].playerName}</h6>
                     </Col>
                   </Row>
                   <Row>
@@ -130,7 +132,7 @@ export default function Transaction() {
                       <h6> Status: </h6>
                     </Col>
                     <Col sm={24} lg={12}>
-                      <h6> {transaction[param.id].status}</h6>
+                      <h6> {transaction[param.id - 1].status}</h6>
                     </Col>
                   </Row>
                   <Row>
@@ -142,7 +144,7 @@ export default function Transaction() {
                     <Col sm={24} lg={12}>
                       <h6>
                         {" "}
-                        {moment(transaction[param.id].createdAt).format(
+                        {moment(transaction[param.id - 1].createdAt).format(
                           "MMM D, YYYY @ h:mm A"
                         )}
                       </h6>
