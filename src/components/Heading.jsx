@@ -5,6 +5,7 @@ import React, { useEffect, useState } from "react";
 import { Dropdown, Icon, Header } from "rsuite";
 import { useCookies } from "react-cookie";
 import { useHistory } from "react-router-dom";
+import { User } from "../dummyData/user";
 
 export default function Heading({ page }) {
   const [user, setUser] = useState("");
@@ -12,10 +13,14 @@ export default function Heading({ page }) {
   const router = useHistory();
 
   useEffect(() => {
-    cookie && cookie.a_auth
-      ? setUser(cookie.a_auth.name)
-      : router.push("/login");
+    cookie && cookie.a_auth ? setUser(User.name) : router.push("/login");
   }, []);
+
+  // useEffect(() => {
+  //   cookie && cookie.a_auth
+  //     ? setUser(cookie.a_auth.name)
+  //     : router.push("/login");
+  // }, []);
 
   const logout = () => {
     removeCookie("a_auth", null, {
