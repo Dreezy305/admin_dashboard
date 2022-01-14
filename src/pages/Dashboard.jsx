@@ -9,6 +9,7 @@ import Heading from "../components/Heading";
 import Menu from "../components/Menu";
 import { parseCurrency, parseNumber } from "../components/Utils";
 import { PlayerData } from "../dummyData/player";
+import { TicketsData } from "../dummyData/tickets";
 
 export default function Dashboard() {
   const [loading, setLoading] = React.useState(false);
@@ -60,7 +61,8 @@ export default function Dashboard() {
               <Col sm={24} lg={12}>
                 <Panel shaded bordered bodyFill className="counter">
                   <h2 className="">
-                    {dashboard.ticket ? parseNumber(dashboard.ticket) : 0}
+                    {/* {dashboard.ticket ? parseNumber(dashboard.ticket) : 0} */}
+                    {TicketsData.length}
                   </h2>
                   <p>Tickets</p>
                 </Panel>
