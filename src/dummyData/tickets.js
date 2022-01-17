@@ -10,6 +10,7 @@ export const TicketsData = [
     winnings: 2000,
     totalOdds: 2.2,
     bonus: 7000,
+    potentialWinnings: 240000,
   },
   {
     id: 2,
