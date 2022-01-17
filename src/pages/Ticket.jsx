@@ -263,7 +263,7 @@ export default function Ticket() {
                       </Col>
                     </Row>
                   </div>
-                  <table className="ticket-table">
+                  {/* <table className="ticket-table">
                     <tr>
                       <th>Selection ID</th>
                       <th>Event ID</th>
@@ -277,7 +277,7 @@ export default function Ticket() {
                       .map((item, key) =>
                         renderOddGroup(item.odds, item.gameId, item.name)
                       )}
-                  </table>
+                  </table> */}
                 </div>
               </div>
             </div>
