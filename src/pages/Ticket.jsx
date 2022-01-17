@@ -10,6 +10,7 @@ import moment from "moment";
 import Heading from "../components/Heading";
 import Menu from "../components/Menu";
 import { sumOdd, parseCurrency } from "../components/Utils";
+import { TicketsData } from "../dummyData/tickets";
 
 export default function Ticket() {
   const [loading, setLoading] = React.useState(false);
