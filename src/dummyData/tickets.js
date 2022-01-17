@@ -6,7 +6,7 @@ export const TicketsData = [
     playerName: "Musliu Egbesola",
     status: "cashout",
     createdAt: "2021-10-20T14:52:38.612Z",
-    betType: "multiple",
+    type: "multiple",
     winnings: 2000,
     totalOdds: 2.2,
     bonus: 7000,

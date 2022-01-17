@@ -437,13 +437,13 @@ export default function Tickets() {
                 <Column width={120} fixed="right">
                   <HeaderCell>Action</HeaderCell>
                   <Cell>
-                    {(rowData) => {
+                    {(rowData, key) => {
                       return (
                         <span>
                           <Button
                             size="xs"
                             appearance="ghost"
-                            href={`/ticket/${rowData.ticketId}`}
+                            href={`/ticket/${key}`}
                           >
                             {" "}
                             View{" "}

@@ -14,7 +14,8 @@ import { TicketsData } from "../dummyData/tickets";
 
 export default function Ticket() {
   const [loading, setLoading] = React.useState(false);
-  const [ticket, setTicket] = useState({ games: [], status: "" });
+  // const [ticket, setTicket] = useState({ games: [], status: "" });
+  const [ticket, setTicket] = useState(TicketsData);
   const param = useParams();
   const [role, setRole] = useState("");
   const router = useHistory();
@@ -25,6 +26,8 @@ export default function Ticket() {
     setRole(user.role);
     user.role === "media-marketing" ? router.push("/no-access") : null;
   }, []);
+
+  console.log(param.id, "pp");
 
   useEffect(() => {
     getTicket();
@@ -147,7 +150,9 @@ export default function Ticket() {
         <Container>
           <Heading
             page={`Ticket ID: ${
-              ticket && ticket.ticketId ? ticket.ticketId.toUpperCase() : ""
+              ticket && ticket[param.id].ticketId
+                ? ticket[param.id].ticketId.toUpperCase()
+                : ""
             }`}
           />
           <Content className="container">
@@ -160,7 +165,10 @@ export default function Ticket() {
                 <h4>
                   <span>
                     {" "}
-                    Amount: {ticket.amount ? parseCurrency(ticket.amount) : 0}
+                    Amount:{" "}
+                    {ticket[param.id].amount
+                      ? parseCurrency(ticket[param.id].amount)
+                      : 0}
                   </span>
                 </h4>
 
@@ -172,7 +180,7 @@ export default function Ticket() {
                       </Col>
                       <Col sm={12} lg={12}>
                         <span style={{ textTransform: "uppercase" }}>
-                          {ticket.ticketId}
+                          {ticket[param.id].ticketId}
                         </span>
                       </Col>
                     </Row>
@@ -181,7 +189,7 @@ export default function Ticket() {
                         Date
                       </Col>
                       <Col sm={12} lg={12}>
-                        {moment(ticket.createdAt).format(
+                        {moment(ticket[param.id].createdAt).format(
                           "MMM D, YYYY @ h:mm A"
                         )}
                       </Col>
@@ -191,7 +199,7 @@ export default function Ticket() {
                         Bet type
                       </Col>
                       <Col sm={12} lg={12}>
-                        {ticket.type}
+                        {ticket[param.id].type}
                       </Col>
                     </Row>
                     <Row>
@@ -199,7 +207,7 @@ export default function Ticket() {
                         Amount
                       </Col>
                       <Col sm={12} lg={12}>
-                        {parseCurrency(ticket.amount)}
+                        {parseCurrency(ticket[param.id].amount)}
                       </Col>
                     </Row>
 
@@ -211,7 +219,7 @@ export default function Ticket() {
                         <Tag
                           color={
                             totalResult() === "win" ||
-                            ticket.status === "cashout"
+                            ticket[param.id].status === "cashout"
                               ? "green"
                               : totalResult() === "lost"
                               ? "red"
@@ -221,7 +229,7 @@ export default function Ticket() {
                           }
                         >
                           <b style={{ textTransform: "capitalize" }}>
-                            {ticket.status === "cashout"
+                            {ticket[param.id].status === "cashout"
                               ? "Cashout"
                               : totalResult()}
                           </b>
@@ -234,7 +242,7 @@ export default function Ticket() {
                         Total Odds
                       </Col>
                       <Col sm={12} lg={12}>
-                        {totalOdds}
+                        {ticket[param.id].totalOdds}
                       </Col>
                     </Row>
 
@@ -243,7 +251,7 @@ export default function Ticket() {
                         Winnings
                       </Col>
                       <Col sm={12} lg={12}>
-                        {parseCurrency(ticket.winnings)}
+                        {parseCurrency(ticket[param.id].winnings)}
                       </Col>
                     </Row>
                     <Row>
@@ -251,7 +259,7 @@ export default function Ticket() {
                         Bonus
                       </Col>
                       <Col sm={12} lg={12}>
-                        {parseCurrency(ticket.bonus)}
+                        {parseCurrency(ticket[param.id].bonus)}
                       </Col>
                     </Row>
                     <Row>
@@ -259,7 +267,9 @@ export default function Ticket() {
                         Potential Winnings
                       </Col>
                       <Col sm={12} lg={12}>
-                        {parseCurrency(ticket.bonus + ticket.winnings)}
+                        {parseCurrency(
+                          ticket[param.id].bonus + ticket[param.id].winnings
+                        )}
                       </Col>
                     </Row>
                   </div>
